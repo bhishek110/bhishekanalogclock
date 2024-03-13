@@ -1,0 +1,112 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: url(clock-background.jpeg);
+  background-size: cover;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    background: url(clock-background-portrait.jpeg);
+    background-size: cover;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  z-index: 2;
+}
+
+.clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.container span {
+  position: absolute;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--i)));
+  inset: 10px;
+}
+
+h4 {
+  transform: rotate(calc(-30deg * var(--i)));
+}
+
+.container .dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.hand-container {
+  display: flex;
+  justify-content: center;
+}
+
+.hand-container #hour {
+  position: absolute;
+  top: 30.5%;
+  width: 8px;
+  height: 60px;
+  background-color: black;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  transform-origin: bottom;
+  z-index: 1;
+  /* transform: rotate(30deg); */
+}
+
+.hand-container #minute {
+  position: absolute;
+  top: 23.5%;
+  width: 6px;
+  height: 80px;
+  background-color: blue;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  transform-origin: bottom;
+  z-index: 2;
+  /* transform: rotate(60deg); */
+}
+
+.hand-container #second {
+  position: absolute;
+  top: 17%;
+  width: 4px;
+  height: 100px;
+  background-color: red;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  transform-origin: bottom;
+  z-index: 3;
+  /* transform: rotate(180deg); */
+}
